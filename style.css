@@ -1,0 +1,2746 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.menu img {
+  position: relative;
+  top: 20%;
+  left: 3%;
+  z-index: 2;
+}
+
+nav {
+  position: fixed;
+  text-align: center;
+  background-color: #fff;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  padding-top: 4.5rem;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.activeNav {
+  top: 64px;
+  opacity: 1;
+}
+
+nav.active {
+  opacity: none;
+  top: 0;
+  transition: 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+nav li {
+  text-decoration: none;
+  padding-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #262626;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.border {
+  color: #7cc576;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+nav li a:hover {
+  color: #7cc576;
+}
+
+.burger {
+  position: absolute;
+  width: 24px;
+  height: 18px;
+  top: 35%;
+  right: 5%;
+  transition: 0.2s;
+  z-index: 2;
+}
+
+.burger.active {
+  transform: rotate(90deg);
+}
+
+.burger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  background-color: #262626;
+  border-radius: 10px;
+  transition: top 0.2s 0.2s, bottom 0.2s 0.2s transform 0.2s 0.4s,
+    opacity 0.2s 0.2s;
+}
+
+.burger.active span:nth-child(1) {
+  top: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+
+.burger span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger span:nth-child(3) {
+  top: calc(100% - 2px);
+}
+
+.burger.active span:nth-child(3) {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+}
+
+/* HEADER HOME */
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("img/laptop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+
+.text-home {
+  display: flex;
+  position: absolute;
+  top: 30%;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.text-home h1 {
+  font-size: 2rem;
+  margin-left: 3rem;
+  text-align: center;
+  margin: auto;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-home p {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  color: lightgray;
+}
+
+.home button {
+  position: absolute;
+  display: block;
+  border: none;
+  color: white;
+  top: 70%;
+  margin-top: 0.5rem;
+  margin-left: 5.5rem;
+  width: 150px;
+  font-size: 0.7rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 0 rgba(50, 50, 50, 0.6);
+  background-color: #7cc576;
+  border-radius: 20px 20px;
+  cursor: pointer;
+}
+
+.home button:hover {
+  background-color: #96d050;
+}
+
+/* ABOUT */
+
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.about h2 {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+
+.about p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: gray;
+  font-weight: 500;
+}
+
+.icons {
+  text-align: center;
+  margin: 1rem 10%;
+  width: 80%;
+}
+
+.icons i {
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icons h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon span {
+  margin-bottom: 3rem;
+  line-height: 0.9rem;
+  font-size: 0.7rem;
+  color: gray;
+}
+
+/* BLOG */
+
+.blog {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("img/cliff.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 2rem;
+}
+
+.blog::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+
+.gear {
+  display: none;
+}
+
+.relax {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.relax h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 3rem 3rem 1rem 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.relax span {
+  color: #96d091;
+}
+
+.relax p {
+  color: lightgray;
+  text-align: center;
+  margin: 0 1rem 3rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  overflow: hidden;
+}
+
+.done {
+  display: flex;
+  flex-direction: column;
+}
+
+.done i {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  color: lightgray;
+  margin-bottom: 1rem;
+  font-weight: 100;
+}
+
+.done span {
+  color: lightgray;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.blog button {
+  display: block;
+  border: none;
+  color: white;
+  top: 70%;
+  margin-top: 2rem;
+  margin-left: 5.5rem;
+  width: 150px;
+  font-size: 0.7rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 0 rgba(50, 50, 50, 0.6);
+  background-color: #7cc576;
+  border-radius: 20px 20px;
+  cursor: pointer;
+}
+
+.blog button:hover {
+  background-color: #96d050;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.portfolio h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.portfolio h3 {
+  margin-top: 0.5rem;
+  text-align: center;
+  color: gray;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.portfolio-text h2 {
+  margin-top: 2rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-text p {
+  text-align: center;
+  color: gray;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.portfolio-icons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  text-align: left;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-icons-box {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 80%;
+}
+
+.circle {
+  position: relative;
+  background-color: white;
+  border: 3px solid black;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0.5rem;
+  margin-left: 1rem;
+}
+
+.portfolio-icons-box i {
+  position: absolute;
+  font-size: 2rem;
+  margin: 0.9rem;
+}
+
+.portfolio-icons-text {
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 95%;
+  margin-top: 0.5rem;
+}
+
+.portfolio-icons-text p {
+  text-align: left;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: black;
+}
+
+.portfolio-icons-text span {
+  text-align: left;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+
+.portfolio a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #96d050;
+  font-weight: bold;
+}
+
+/* .portfolio img {
+  display: none;
+} */
+
+/* CULTURE */
+
+.culture {
+  background-color: #f9f9f9;
+}
+.culture h2 {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.culture h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.icon-culture {
+  margin-bottom: 3rem;
+}
+
+.icons-culture {
+  text-align: center;
+  margin: 1rem 10%;
+  width: 80%;
+}
+
+.icons-culture i {
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icons-culture h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.icons-culture span {
+  margin-bottom: 3rem;
+  line-height: 0.9rem;
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.clients {
+  /* position: relative; */
+  margin-bottom: 2rem;
+}
+
+.clients h2 {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.clients h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: gray;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.circle-clients {
+  position: relative;
+  background-color: white;
+  border: 3px solid black;
+  width: 170px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 1rem;
+  margin-left: 4.5rem;
+  margin-bottom: 1rem;
+}
+.bubble {
+  text-align: center;
+  position: relative;
+  width: 90%;
+  height: 150px;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  background: #f9f9f9;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin-left: 1rem;
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0 15px 15px;
+  border-color: #f9f9f9 transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -15px;
+  left: 72px;
+}
+
+.opinions-text span {
+  text-align: center;
+  font-size: 0.8rem;
+}
+.opinions-text p {
+  margin-top: 0.2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7cc576;
+  font-weight: bold;
+}
+
+/* CONTACT */
+.contact {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-color: #7cc576;
+}
+
+.contact h2 {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+.contact button {
+  display: block;
+  border: 3px solid white;
+  color: white;
+  top: 70%;
+  margin-top: 2rem;
+  margin-left: 5.5rem;
+  width: 150px;
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #7cc576;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* COMPANIES */
+.companies {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.companies img {
+  margin: 1rem;
+  filter: grayscale(1);
+  transform: scale(0.7);
+  transition: 0.2s;
+  cursor: pointer;
+}
+.companies img:hover {
+  filter: grayscale(0);
+}
+
+/* CONTACT2 */
+.contact2 {
+  background-color: #222;
+  color: white;
+}
+
+.Contact-us {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  border-bottom: 1px dashed white;
+}
+.Contact-us h3 {
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.Contact-us i {
+  text-align: center;
+  display: flex;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+}
+.Contact-us i p {
+  text-align: center;
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+.Contact-us i p.mobile-icon {
+  margin-left: 4rem;
+}
+
+.latest-posts {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  border-bottom: 1px dashed white;
+}
+
+.latest-posts h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.latest-posts i {
+  display: flex;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.latest-posts p {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.latests-tweets {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+.latests-tweets h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.latests-tweets i {
+  display: flex;
+  font-size: 1.4rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.latests-tweets p {
+  margin-left: 1rem;
+  margin-right: 3rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  color: #7cc576;
+}
+.latests-tweets a {
+  margin-left: 4rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.latests-tweets span {
+  margin-left: 4rem;
+  text-decoration: none;
+  font-size: 0.6rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+
+.footer {
+  position: relative;
+}
+.footer .footer-icons {
+  text-align: center;
+  margin: 1rem;
+}
+.footer i {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.footer p {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (orientation: portrait) and (min-width: 360px) {
+  .home {
+    height: 90vh;
+  }
+  .home button {
+    margin-left: 6.5rem;
+  }
+
+  .text-home {
+    top: 35%;
+  }
+
+  .text-home h1 {
+    font-size: 2rem;
+    margin-left: 3rem;
+    text-align: center;
+    margin: auto;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .text-home p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* BLOG */
+
+  .blog {
+    height: 90vh;
+  }
+  .blog button {
+    margin-left: 6.5rem;
+  }
+
+  .done {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .done i {
+    font-size: 1.7rem;
+    margin-left: 3rem;
+  }
+
+  .done span {
+    font-size: 1rem;
+  }
+
+  .circle-clients {
+    position: relative;
+    background-color: white;
+    border: 3px solid black;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem;
+    margin-left: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    height: 40vh;
+  }
+
+  .contact button {
+    margin-left: 6.5rem;
+  }
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  .text-home h1 {
+    font-size: 2.2rem;
+  }
+  .text-home p {
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    color: lightgray;
+  }
+
+  .home button {
+    margin-left: 8.5rem;
+  }
+
+  /* BLOG */
+  .blog {
+    height: 80vh;
+  }
+  .blog button {
+    margin-left: 8.5rem;
+  }
+
+  /* PORTFOLIO */
+
+  .circle {
+    margin-left: 2.5rem;
+  }
+
+  .portfolio-icons-box i {
+    margin-left: 1rem;
+  }
+
+  .circle-clients {
+    margin-left: 8rem;
+  }
+
+  /* CONTACT */
+
+  .contact button {
+    margin-top: 3rem;
+    margin-left: 8.5rem;
+  }
+
+  /* COMPANIES */
+  .companies {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .companies img {
+    margin: 1rem;
+    margin-left: 3.5rem;
+    filter: grayscale(1);
+    transform: scale(1);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 700px) and (orientation: portrait) {
+  .menu {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  .menu img {
+    position: relative;
+    top: 40%;
+    left: 3%;
+    z-index: 2;
+  }
+  nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding-right: 1rem;
+    background-color: transparent;
+    opacity: 1;
+    padding-top: 2rem;
+  }
+
+  nav li {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0 2rem 0 0;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  .bgc {
+    height: 80px;
+    background-color: #fff;
+  }
+
+  .bgcNav {
+    margin: 0.5rem 2rem 0 0;
+  }
+
+  nav li a {
+    text-decoration: none;
+    color: gray;
+  }
+
+  .border {
+    color: #ff6033;
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+
+  nav li a:hover {
+    color: #262626;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .text-home {
+    top: 30%;
+  }
+  .home {
+    height: 60vh;
+  }
+  .text-home h1 {
+    font-size: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .text-home p {
+    font-size: 1.2rem;
+  }
+
+  .home button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 19rem;
+  }
+
+  /* ABOUT */
+
+  .about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .icons i {
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icons h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon span {
+    margin-bottom: 3rem;
+    line-height: 0.9rem;
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  /* BLOG */
+  .blog {
+    height: 55vh;
+  }
+  .blog h2 {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+
+  .done i {
+    overflow: hidden;
+    margin-left: 11rem;
+  }
+
+  .blog button {
+    margin-left: 19rem;
+    margin-top: 3rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio {
+    background-image: url("img/tablet.png");
+    background-position: 240% 80%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
+
+  .portfolio h2 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-text h2 {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  .portfolio-text p {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 35%;
+    text-align: left;
+  }
+
+  .circle {
+    margin: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.5rem;
+    text-align: left;
+    margin-left: 0;
+    left: 9rem;
+  }
+
+  .portfolio-icons-text p {
+    font-size: 1.3rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio-icons-text span {
+    font-size: 0.9rem;
+    margin-left: 0rem;
+    margin-right: 35%;
+    margin-bottom: 0.7rem;
+  }
+  .portfolio a {
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  /* CLIENT */
+
+  .clients {
+    margin-bottom: 2rem;
+  }
+
+  .opinions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .opinion-one {
+    display: flex;
+  }
+
+  .opinion-two {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .clients h2 {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .clients h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .circle-clients {
+    position: relative;
+    background-color: white;
+    border: 3px solid black;
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+  }
+  .bubble {
+    text-align: center;
+    position: relative;
+    width: 50%;
+    height: 150px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background: #f9f9f9;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin-left: 1rem;
+    margin-top: 2rem;
+  }
+
+  .bubble::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #f9f9f9 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -15px;
+    left: 72px;
+  }
+
+  .opinions-text span {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .opinions-text p {
+    margin-top: 0.2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #7cc576;
+    font-weight: bold;
+  }
+
+  .contact button {
+    margin-left: 19rem;
+  }
+  .icon-culture h3 {
+    font-size: 1.3rem;
+  }
+
+  .icon-culture span {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .contact {
+    height: 30vh;
+  }
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  /* COMPANIES */
+
+  .companies img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 300px;
+    height: 70px;
+  }
+
+  /* CONTACT2 */
+
+  .Contact-us i {
+    margin-left: 18rem;
+  }
+  .Contact-us i p {
+    font-size: 1.2rem;
+    margin-right: 20rem;
+  }
+
+  .latest-posts i {
+    margin-left: 16rem;
+  }
+
+  .latests-tweets i {
+    margin-left: 16rem;
+  }
+  .latests-tweets p {
+    margin-right: 18rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 18.5rem;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    margin-left: 18.5rem;
+  }
+
+  /* FOOTER */
+  .footer .footer-icons {
+    text-align: center;
+    margin: 1rem;
+  }
+  .footer i {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 500px) and (orientation: landscape) {
+  .menu {
+    height: 60px;
+  }
+
+  .menu img {
+    top: 30%;
+  }
+
+  nav {
+    top: -150%;
+  }
+
+  /* header HOME */
+
+  .text-home {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .text-home h1 {
+    font-size: 2rem;
+    margin-left: 3rem;
+    text-align: center;
+    margin: auto;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  .text-home p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: lightgray;
+  }
+
+  .home button {
+    margin-left: 12rem;
+  }
+
+  /* ABOUT */
+
+  .about h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .icons i {
+    font-size: 5rem;
+    margin-top: 1.5rem;
+  }
+
+  .icons h3 {
+    font-size: 1.3rem;
+  }
+
+  .icon span {
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* BLOG */
+
+  .blog {
+    height: 170vh;
+  }
+
+  .relax h2 {
+    font-size: 2rem;
+    margin: 3rem 4rem 1rem 4rem;
+  }
+
+  .relax p {
+    margin: 0 2.5rem 3rem 2.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .done i {
+    font-size: 2rem;
+    margin-left: 5rem;
+  }
+
+  .done span {
+    font-size: 1.1rem;
+  }
+
+  .blog button {
+    margin-left: 12rem;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio h2 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .portfolio-text p {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .circle {
+    margin: 0.5rem;
+    margin-left: 3rem;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.8rem;
+  }
+
+  .portfolio-icons-text p {
+    font-size: 1.3rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio-icons-text span {
+    font-size: 0.9rem;
+    margin-left: 0rem;
+  }
+
+  /* CULTURE */
+
+  .culture h2 {
+    font-size: 2rem;
+  }
+  .culture h3 {
+    color: gray;
+    font-size: 1rem;
+  }
+  .icon-culture {
+    margin-bottom: 2rem;
+  }
+
+  .icons-culture h3 {
+    font-size: 1.2rem;
+    color: black;
+  }
+
+  .icons-culture span {
+    line-height: 1rem;
+    font-size: 0.8rem;
+  }
+
+  /*CLIENTS */
+
+  .clients h2 {
+    font-size: 2rem;
+  }
+
+  .clients h3 {
+    font-size: 1rem;
+  }
+
+  .circle-clients {
+    width: 190px;
+    height: 170px;
+    margin-left: 11rem;
+  }
+  .bubble {
+    width: 90%;
+    height: 130px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .opinions-text span {
+    font-size: 0.9rem;
+  }
+  .opinions-text p {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    height: 80vh;
+  }
+
+  .contact h2 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+  }
+  .contact button {
+    margin-left: 12rem;
+  }
+
+  /* COMPANIES */
+  .companies {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .companies img {
+    transition: 0.2s;
+    cursor: pointer;
+    width: 230px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  /* CONTACT2 */
+
+  .Contact-us h3 {
+    font-size: 1.5rem;
+  }
+  .Contact-us i {
+    font-size: 2rem;
+    margin-left: 10rem;
+  }
+  .Contact-us i p {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    margin-right: 10rem;
+  }
+  .Contact-us i p.mobile-icon {
+    margin-left: 4rem;
+  }
+
+  .latest-posts h3 {
+    font-size: 1.5rem;
+  }
+
+  .latest-posts i {
+    font-size: 1.4rem;
+    margin-left: 8rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+  .latest-posts p {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .latests-tweets h3 {
+    font-size: 1.5rem;
+  }
+
+  .latests-tweets i {
+    display: flex;
+    font-size: 1.5rem;
+    margin-left: 8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .latests-tweets p {
+    margin-left: 1rem;
+    margin-right: 10rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #7cc576;
+  }
+  .latests-tweets a {
+    margin-left: 10.5rem;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    margin-left: 10.5rem;
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  /* header HOME */
+
+  .text-home {
+    top: 22%;
+  }
+
+  .text-home h1 {
+    font-size: 2.5rem;
+  }
+
+  .text-home p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: lightgray;
+  }
+
+  .home button {
+    margin-left: 14rem;
+    margin-top: 1rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  /* BLOG */
+
+  .blog {
+    height: 160vh;
+  }
+
+  .relax p {
+    margin: 0 6rem 3rem 6rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .done i {
+    margin-left: 7rem;
+  }
+
+  .blog button {
+    margin-left: 14rem;
+    margin-top: 3rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  /* PORTFOLIO */
+
+  .circle {
+    margin-left: 5rem;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.8rem;
+    overflow: hidden;
+  }
+
+  /* CULTURE */
+
+  .icons-culture span {
+    line-height: 1.2rem;
+    font-size: 1rem;
+  }
+
+  /*CLIENTS */
+
+  .clients h3 {
+    font-size: 1.1rem;
+  }
+
+  .circle-clients {
+    margin-left: 14rem;
+  }
+  .bubble {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    height: 70vh;
+  }
+
+  .contact h2 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 2rem;
+  }
+  .contact button {
+    margin-left: 15rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  /* COMPANIES */
+
+  .companies {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .companies img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 230px;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  /* CONTACT2 */
+
+  .Contact-us i {
+    font-size: 2rem;
+    margin-left: 13rem;
+  }
+  .Contact-us i p {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    margin-right: 12rem;
+  }
+
+  .latest-posts i {
+    font-size: 1.5rem;
+    margin-left: 10rem;
+  }
+  .latest-posts p {
+    font-size: 1.1rem;
+  }
+
+  .latests-tweets i {
+    margin-left: 10rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 12.5rem;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    margin-left: 12.5rem;
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  .text-home h1 {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .text-home p {
+    font-size: 1.2rem;
+  }
+
+  .home button {
+    margin-left: 18rem;
+  }
+
+  /* BLOG */
+
+  .blog button {
+    margin-left: 17rem;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio-icons-text {
+    padding-top: 0.3rem;
+  }
+
+  /*CLIENTS */
+
+  .circle-clients {
+    margin-left: 16rem;
+  }
+
+  /* CONTACT */
+
+  .contact button {
+    margin-left: 17rem;
+  }
+
+  /* COMPANIES */
+
+  .companies img {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 250px;
+    height: 60px;
+  }
+
+  /* CONTACT2 */
+
+  .Contact-us i {
+    margin-left: 15rem;
+  }
+  .Contact-us i p {
+    font-size: 1.2rem;
+    margin-right: 16rem;
+  }
+
+  .latest-posts i {
+    margin-left: 12rem;
+  }
+
+  .latests-tweets i {
+    margin-left: 10rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 12.5rem;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    margin-left: 12.5rem;
+  }
+}
+
+@media (min-width: 800px) and (orientation: landscape) {
+  .menu {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  .menu img {
+    position: relative;
+    top: 40%;
+    left: 3%;
+    z-index: 2;
+  }
+  nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding-right: 1rem;
+    background-color: transparent;
+    opacity: 1;
+    padding-top: 2rem;
+  }
+
+  nav li {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0 2rem 0 0;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+
+  .bgcNav {
+    margin: 0.5rem 2rem 0 0;
+  }
+
+  nav li a {
+    text-decoration: none;
+    color: gray;
+  }
+
+  .border {
+    color: #ff6033;
+    font-size: 1.5rem;
+    transition: 0.3s;
+  }
+
+  nav li a:hover {
+    color: #7cc576;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .text-home {
+    top: 28%;
+  }
+  .home {
+    height: 130vh;
+  }
+  .text-home h1 {
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .text-home p {
+    font-size: 1.2rem;
+  }
+
+  .home button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 19rem;
+  }
+
+  /* ABOUT */
+
+  .about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .icons i {
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .icons h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .icon span {
+    margin-bottom: 3rem;
+    line-height: 0.9rem;
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  /* BLOG */
+
+  .blog h2 {
+    margin-left: 7rem;
+    margin-right: 7rem;
+  }
+
+  .done i {
+    overflow: hidden;
+    margin-left: 9rem;
+  }
+
+  .blog button {
+    margin-left: 19rem;
+    margin-top: 3rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  /* PORTFOLIO */
+
+  .portfolio {
+    background-image: url("img/tablet.png");
+    background-position: 240% 80%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
+
+  .portfolio h2 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-text h2 {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  .portfolio-text p {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 35%;
+    text-align: left;
+  }
+
+  .circle {
+    margin: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.5rem;
+    text-align: left;
+    margin-left: 0;
+    left: 9rem;
+  }
+
+  .portfolio-icons-text p {
+    font-size: 1.3rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio-icons-text span {
+    font-size: 0.9rem;
+    margin-left: 0rem;
+    margin-right: 35%;
+    margin-bottom: 0.7rem;
+  }
+  .portfolio a {
+    text-align: left;
+    margin-left: 1.5rem;
+  }
+
+  /* CLIENT */
+
+  .clients {
+    margin-bottom: 2rem;
+  }
+
+  .opinions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .opinion-one {
+    display: flex;
+  }
+
+  .opinion-two {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .clients h2 {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .clients h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .circle-clients {
+    position: relative;
+    background-color: white;
+    border: 3px solid black;
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+  }
+  .bubble {
+    text-align: center;
+    position: relative;
+    width: 50%;
+    height: 150px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background: #f9f9f9;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin-left: 1rem;
+    margin-top: 2rem;
+  }
+
+  .bubble::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #f9f9f9 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -15px;
+    left: 72px;
+  }
+
+  .opinions-text span {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .opinions-text p {
+    margin-top: 0.2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #7cc576;
+    font-weight: bold;
+  }
+
+  .contact button {
+    margin-left: 19rem;
+  }
+
+  /* COMPANIES */
+
+  .companies img {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 300px;
+    height: 80px;
+  }
+
+  /* CONTACT2 */
+
+  .Contact-us i {
+    margin-left: 18rem;
+  }
+  .Contact-us i p {
+    font-size: 1.2rem;
+    margin-right: 20rem;
+  }
+
+  .latest-posts i {
+    margin-left: 16rem;
+  }
+
+  .latests-tweets i {
+    margin-left: 14rem;
+  }
+  .latests-tweets p {
+    margin-right: 18rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 16.5rem;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    margin-left: 16.5rem;
+  }
+
+  /* FOOTER */
+  .footer .footer-icons {
+    text-align: center;
+    margin: 1rem;
+  }
+  .footer i {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    height: 90px;
+  }
+  nav li {
+    font-size: 1.2rem;
+  }
+
+  .text-home {
+    top: 30%;
+  }
+  .home {
+    height: 50vh;
+  }
+  .text-home h1 {
+    font-size: 4rem;
+  }
+
+  .text-home p {
+    font-size: 1.5rem;
+  }
+
+  .home button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 26rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  /* ABOUT */
+
+  .icon span {
+    line-height: 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* BLOG */
+  .blog {
+    width: 100%;
+    height: 40vh;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    background-image: none;
+    background-size: none;
+    background-position: none;
+    background-repeat: none;
+  }
+
+  .relax {
+    width: 70%;
+    height: 100%;
+    background-image: url("img/cliff.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    right: 0;
+    top: 0;
+  }
+  .relax::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #000;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+  }
+
+  .blog::before {
+    display: none;
+  }
+
+  .gear {
+    height: 100%;
+    display: block;
+    background-color: #e9e9e9;
+  }
+  .gear .fa-cog {
+    font-size: 25rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 6.5rem;
+    animation: rotation 10s infinite linear;
+    color: white;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+
+  .blog h2 {
+    opacity: 0.9;
+    font-size: 2.2rem;
+    text-align: left;
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+  .relax span {
+    margin-right: 20rem;
+  }
+  .relax p {
+    opacity: 0.9;
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 3rem;
+    margin-right: 5rem;
+    line-height: 1.2rem;
+  }
+
+  .done i {
+    margin-left: 3rem;
+  }
+
+  .blog button {
+    margin-left: 3rem;
+    margin-top: 3rem;
+    width: 200px;
+    font-size: 1rem;
+    padding: 1.2rem;
+    opacity: 0.9;
+  }
+  .done {
+    opacity: 0.9;
+  }
+
+  /* PORTFOLIO */
+  .portfolio {
+    background-position: 290% 90%;
+  }
+
+  /* CULTURE 8 */
+
+  .icons-culture {
+    display: flex;
+    width: 85vw;
+  }
+  .icon-culture {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .icons-culture span {
+    line-height: 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* CLIENT */
+
+  .clients {
+    margin-bottom: 2rem;
+  }
+
+  .clients h2 {
+    font-size: 2rem;
+  }
+
+  .clients h3 {
+    font-size: 1rem;
+  }
+
+  .circle-clients {
+    width: 240px;
+    height: 220px;
+  }
+  .bubble {
+    margin-top: 3rem;
+  }
+
+  .contact {
+    height: 40vh;
+  }
+
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact button {
+    margin-left: 26rem;
+  }
+
+  .companies img {
+    margin-left: 6rem;
+    margin-right: 6rem;
+    width: 320px;
+    height: 90px;
+  }
+
+  /* CONTACT2 */
+
+  .contact2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Contact-us {
+    text-align: left;
+    margin-top: -1rem;
+    margin-right: 5rem;
+  }
+  .Contact-us i {
+    margin-left: 3rem;
+  }
+  .Contact-us i p {
+    font-size: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+  }
+
+  .latest-posts {
+    margin-right: 2rem;
+    margin-left: -3rem;
+  }
+  .latest-posts h3 {
+    text-align: center;
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+  .latest-posts i {
+    margin-left: 1rem;
+  }
+  .latest-posts p {
+    font-size: 0.9rem;
+  }
+
+  .latests-tweets {
+    text-align: right;
+    margin-left: 0rem;
+    width: 33%;
+  }
+  .latests-tweets h3 {
+    text-align: right;
+    margin-right: 5rem;
+  }
+  .latests-tweets i {
+    margin-left: 0rem;
+  }
+  .latests-tweets p {
+    text-align: left;
+    margin-right: 3rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 2.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    text-align: left;
+    margin-left: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home {
+    height: 90vh;
+  }
+
+  .text-home h1 {
+    margin-left: 7rem;
+  }
+
+  .text-home p {
+    margin-left: 10rem;
+  }
+
+  .home button {
+    margin-top: 0rem;
+    margin-left: 36rem;
+  }
+
+  /* ABOUT */
+
+  .icons {
+    margin-right: 0;
+    margin-left: 7rem;
+  }
+  .icon {
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+  }
+  .about p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* BLOG */
+  .blog {
+    height: 80vh;
+  }
+
+  .relax {
+    width: 77%;
+  }
+
+  .relax span {
+    margin-right: 50rem;
+  }
+  .relax p {
+    margin-right: 25rem;
+  }
+
+  .portfolio {
+    background-position: 150% 90%;
+    background-size: 60%;
+  }
+
+  .portfolio h2 {
+    font-size: 2.5rem;
+  }
+
+  .portfolio h3 {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-text h2 {
+    margin-left: 10rem;
+  }
+
+  .portfolio-text p {
+    margin-left: 10rem;
+  }
+
+  .circle {
+    margin-left: 10rem;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.5rem;
+    margin-left: 6.5rem;
+    left: 9rem;
+  }
+
+  .portfolio-icons-text p {
+    overflow: hidden;
+    font-size: 1.3rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio-icons-text span {
+    overflow: hidden;
+    font-size: 1.1rem;
+    margin-left: 0rem;
+    margin-right: 35%;
+    margin-bottom: 0.7rem;
+    line-height: 1.2rem;
+  }
+  .portfolio a {
+    text-align: left;
+    margin-left: 10rem;
+  }
+
+  .culture h2 {
+    font-size: 2.5rem;
+  }
+
+  /* CLIENT */
+
+  .clients {
+    margin-bottom: 2rem;
+  }
+
+  .clients h2 {
+    font-size: 2rem;
+  }
+
+  .clients h3 {
+    font-size: 1rem;
+  }
+
+  .circle-clients {
+    width: 240px;
+    height: 220px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+  .bubble {
+    margin-top: 3rem;
+  }
+
+  .contact button {
+    margin-left: 33rem;
+  }
+
+  .companies img {
+    display: flex;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    margin-right: 2rem;
+    width: 20%;
+    height: 20%;
+  }
+
+  /* CONTACT2 */
+
+  .contact2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Contact-us {
+    text-align: left;
+    margin-top: -1rem;
+    margin-right: 5rem;
+  }
+  .Contact-us i {
+    margin-left: 5rem;
+  }
+  .Contact-us i p {
+    font-size: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+  }
+
+  .latest-posts {
+    margin-right: 2rem;
+    margin-left: 0rem;
+  }
+  .latest-posts h3 {
+    text-align: center;
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+  .latest-posts i {
+    margin-left: 1rem;
+  }
+  .latest-posts p {
+    font-size: 0.9rem;
+  }
+
+  .latests-tweets {
+    text-align: right;
+    margin-left: 5rem;
+    width: 33%;
+  }
+  .latests-tweets h3 {
+    text-align: right;
+    margin-right: 7rem;
+  }
+  .latests-tweets i {
+    margin-left: 3rem;
+  }
+  .latests-tweets p {
+    text-align: left;
+    margin-right: 6rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 6rem;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    text-align: left;
+    margin-left: 6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-home h1 {
+    margin-left: 15rem;
+  }
+
+  .text-home p {
+    margin-left: 14rem;
+  }
+
+  .home button {
+    margin-top: 0rem;
+    margin-left: 40rem;
+  }
+
+  /* ABOUT */
+
+  .icons {
+    margin-left: 10rem;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+    overflow: hidden;
+  }
+
+  /* BLOG */
+  .blog {
+    height: 75vh;
+  }
+
+  .relax {
+    width: 75%;
+  }
+
+  .gear {
+    overflow: hidden;
+  }
+  .gear .fa-cog {
+    margin-top: 5rem;
+    margin-left: 11rem;
+  }
+
+  .portfolio-text h2 {
+    margin-left: 10rem;
+  }
+
+  .portfolio-text p {
+    margin-left: 10rem;
+    margin-right: 40%;
+  }
+
+  .circle {
+    margin-left: 10rem;
+  }
+
+  .portfolio-icons-text {
+    margin-top: 0.5rem;
+    margin-left: 6.5rem;
+    left: 9rem;
+  }
+
+  .portfolio-icons-text p {
+    overflow: hidden;
+    font-size: 1.4rem;
+    margin-left: 0rem;
+  }
+
+  .portfolio-icons-text span {
+    overflow: hidden;
+    font-size: 1.2rem;
+    margin-left: 0rem;
+    margin-right: 35%;
+    margin-bottom: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  /* CLIENT */
+
+  .circle-clients {
+    width: 260px;
+    height: 240px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .bubble {
+    width: 35%;
+    height: 120px;
+    margin-top: 4rem;
+  }
+
+  .contact button {
+    margin-left: 42rem;
+  }
+
+  /* CONTACT2 */
+  .Contact-us {
+    text-align: left;
+    margin-top: -1rem;
+    margin-right: 5rem;
+    margin-left: 3rem;
+  }
+  .Contact-us i {
+    margin-left: 5rem;
+  }
+
+  .Contact-us i p {
+    font-size: 1rem;
+    margin-right: 3rem;
+    text-align: center;
+  }
+
+  .latest-posts {
+    margin-right: 2rem;
+    margin-left: 5rem;
+  }
+  .latest-posts h3 {
+    text-align: center;
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+  .latest-posts i {
+    margin-left: 1rem;
+  }
+  .latest-posts p {
+    font-size: 0.9rem;
+  }
+
+  .latests-tweets {
+    text-align: right;
+    margin-left: 5rem;
+    width: 33%;
+  }
+  .latests-tweets h3 {
+    text-align: right;
+    margin-right: 7rem;
+  }
+  .latests-tweets i {
+    margin-left: 9rem;
+  }
+  .latests-tweets p {
+    text-align: left;
+    margin-right: 6rem;
+  }
+
+  .latests-tweets a {
+    margin-left: 11.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  .latests-tweets span {
+    text-align: left;
+    margin-left: 11.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .text-home h1 {
+    margin-left: 17rem;
+  }
+
+  .text-home p {
+    margin-left: 17rem;
+  }
+
+  .home button {
+    margin-top: 0rem;
+    margin-left: 45rem;
+  }
+
+  .gear .fa-cog {
+    margin-top: 5rem;
+    margin-left: 12rem;
+  }
+}
